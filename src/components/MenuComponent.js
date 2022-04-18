@@ -1,33 +1,27 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 'reactstrap';
 
+    
+   function RenderMenuItem({dish, onClick}) {
+       return (
+         <Card onClick={() => onClick(dish.id) }>
+            <CardImg width="100%" src={dish.image} alt={dish.name}/> 
+                            
+            <CardImgOverlay>
+            <CardTitle>{dish.name}</CardTitle>
 
-class Menu extends Component {
+            </CardImgOverlay>
+        </Card>
+       )
+   }
     
-    constructor(props) {
-        super(props);
-        
-
-    }
-    
-    
-   
-    
-    render() {
-
-        const menu = this.props.dishes.map((dish) => {
+    const Menu = props => {
+        const menu = props.dishes.map((dish) => {
             //Map dish to work with every dish and return the layout for every dish below
             
             return (
                 <div key={dish.id} className="col-12 col-md-5 m-1"> 
-                    <Card onClick={() => this.props.onClick(dish.id) }>
-                        <CardImg width="100%" src={dish.image} alt={dish.name}/> 
-                            
-                        <CardImgOverlay>
-                            <CardTitle>{dish.name}</CardTitle>
-
-                        </CardImgOverlay>
-                    </Card>
+                  <RenderMenuItem  dish={dish} onClick={props.onClick} />
                     
                 </div>
             ) // key define every item 
@@ -43,6 +37,9 @@ class Menu extends Component {
             </div>
         );
     }
-}
+
+        
+    
+
 
 export default Menu;

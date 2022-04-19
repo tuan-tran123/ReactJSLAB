@@ -3,7 +3,9 @@ import Menu from './MenuComponent';
 import DishDetail from './DishdetailComponent';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
+import Home from './HomeComponent';
 import { DISHES } from '../shared/dishes'; // Tại sao 2 dấu chấm 
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 
 class Main extends Component {
@@ -13,27 +15,34 @@ class Main extends Component {
 
     this.state = {
         dishes: DISHES,
-        selectedDish: null
+        // selectedDish: null
     };
   }
 
     
-    onDishSelect(dishId) {
-        this.setState({ selectedDish: dishId });
-    }
+    // onDishSelect(dishId) {
+    //     this.setState({ selectedDish: dishId });
+    // }
     
   render() {
+
+    const HomePage = () => {
+      return (
+        <Home />
+      )
+    }
+
     return (
       <div className="App">
         <Header />
-         {/*React call Menu component with  dishes={this.state.dishes as a props*/}
-        <Menu dishes={this.state.dishes} onClick={(dishId)=> this.onDishSelect(dishId) }/> {/*React call Menu Component  duoc truyen 2 props la dishes va onClick */}
-
-          
-        <DishDetail dish = {this.state.dishes.filter((dish) => dish.id ===this.state.selectedDish ) [0]} />  {/*filter của Array dishes sẽ cho ra array thỏa điều kiện ở arrow function*/}
-           {/* Vì filter trả về 1 mảng dish có id đã được chọn nên phải chọn index của giá trị đầu tiên của mảng đó là index 0 là id chứ không phải là các giá trị khác như name, description ...*/ } 
-        <Footer />
+        <Switch>
+          <Route path='/home' component={HomePage} />
+          <Route exact path='/menu' component= {() => <Menu dishes ={this.state.dishes} />} /> {/* Truyền cho Menu props */}
+        <Redirect to ='/home' />
         
+        </Switch>
+        <Footer />
+
       </div>
     );
   }

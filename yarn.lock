@@ -7608,7 +7608,7 @@
     "popper.js" "^1.14.1"
     "prop-types" "^15.6.1"
 
-"react-redux-form@1.16.8":
+"react-redux-form@^1.16.8":
   "integrity" "sha512-qx+3IP+uOsj7rPWKsRH4W8r+TXb4ohfEl/s083X9sbtDA75tyscGmglxkdFSrM/L32l4z139U4aW3avUtx5QFg=="
   "resolved" "https://registry.npmjs.org/react-redux-form/-/react-redux-form-1.16.8.tgz"
   "version" "1.16.8"
@@ -7861,7 +7861,7 @@
   "resolved" "https://registry.npmjs.org/redux-thunk/-/redux-thunk-2.2.0.tgz"
   "version" "2.2.0"
 
-"redux@^2.0.0 || ^3.0.0 || ^4.0.0-0", "redux@^3.0.0", "redux@3.7.2":
+"redux@^2.0.0 || ^3.0.0 || ^4.0.0-0", "redux@^3.0.0", "redux@^3.7.2":
   "integrity" "sha512-pNqnf9q1hI5HHZRBkj3bAngGZW/JMCmexDlOxw4XagXY2o1327nHH54LoTjiPJ0gizoqPDRqWyX/00g0hD6w+A=="
   "resolved" "https://registry.npmjs.org/redux/-/redux-3.7.2.tgz"
   "version" "3.7.2"

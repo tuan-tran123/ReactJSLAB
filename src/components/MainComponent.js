@@ -4,6 +4,7 @@ import Contact from './ContactComponent';
 import DishDetail from './DishdetailComponent';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
+import About from './AboutComponent';
 import Home from './HomeComponent';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom'; //withRouter is used to configure React component to Redux
 import { connect } from 'react-redux';
@@ -62,6 +63,7 @@ class Main extends Component {
           <Route exact path='/menu' component= {() => <Menu dishes ={this.props.dishes} />} />  {/* Truyền cho Menu props */}
           <Route path='/menu/:dishId' component={DishWithId} />
           <Route exact path='/contactus' component={Contact} />
+          <Route exact path='/aboutus' component={() => <About leaders={this.props.leaders} />} />
           <Redirect to='/home' />
         
         </Switch>

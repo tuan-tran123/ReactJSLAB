@@ -9,7 +9,5 @@ export const addComment = (dishId, rating, author, comment) => ({
         author: author,
         comment: comment
     }
-        
-
-    
+   
 }) 

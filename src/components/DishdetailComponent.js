@@ -114,13 +114,13 @@ class CommentForm extends Component {
                             </Row>
                             <Row className='form-group'>
                                 <Col>
-                                <Label htmlFor="username">Your Name</Label>
+                                <Label htmlFor="author">Your Name</Label>
                                 <Control.text
-                                    model='.username'
-                                        className='form-control' id='username' name='username' placeholder='Your name' validators={{ required, minLength: minLength(2), maxLength: maxLength(15) }} />
+                                    model='.author'
+                                        className='form-control' id='author' name='author' placeholder='Your name' validators={{ required, minLength: minLength(2), maxLength: maxLength(15) }} />
                                     <Errors
                                         className="text-danger" 
-                                        model=".username"
+                                        model=".author"
                                         show="touched"
                                         messages={{
                                             required: 'Required',
@@ -133,10 +133,10 @@ class CommentForm extends Component {
                             </Row>
                             <Row className='form-group'>
                                 <Col>
-                                <Label htmlFor='message'>Comments:</Label>
+                                <Label htmlFor='comment'>Comments:</Label>
                                 <Control.textarea
-                                    model='.message'
-                                        className='form-control' id='message' name='message' rows='6' /> 
+                                    model='.comment'
+                                        className='form-control' id='comment' name='comment' rows='6' /> 
                                 </Col>
                             </Row>
                             <Row className='form-group'>
